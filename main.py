@@ -102,7 +102,7 @@ async def on_ready():
 提醒：排班完記得簽名喔
     """
     print("✅ 傳送內容如下：\n" + msg)
-    #requests.post(WEBHOOK_URL, json={"content": msg})
+    requests.post(WEBHOOK_URL, json={"content": msg})
     await client.close()
 
 # 執行 bot
