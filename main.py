@@ -6,6 +6,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
+import json
 
 # ======== 設定區 ========
 load_dotenv()
@@ -14,12 +15,12 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 TARGET_ROLE_NAME = os.getenv("TARGET_ROLE_NAME")
 SPREADSHEET_ID = os.getenv("SPREADSHEET_ID")
 SHEET_NAME = os.getenv("SHEET_NAME")
-SERVICE_ACCOUNT_PATH = os.getenv("SERVICE_ACCOUNT_PATH")
+SERVICE_ACCOUNT_INFO = json.loads(os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON"))
 # =========================
 
 # Google Sheets 認證
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_ACCOUNT_PATH, scope)
+creds = ServiceAccountCredentials.from_json_keyfile_dict(SERVICE_ACCOUNT_INFO, scope)
 client = gspread.authorize(creds)
 
 # 開啟 Google Sheet
