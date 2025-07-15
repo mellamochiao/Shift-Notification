@@ -100,7 +100,7 @@ async def on_ready():
 {" ".join(night_mentions) or "（沒人）"}
 
 提醒：排班完記得簽名喔
-📄 [查看完整班表](https://docs.google.com/spreadsheets/d/1VIvETKN4FDOEeWz29UbaK2c3t6a9SqS4lZoB8LcKJbE/edit?gid=151388549#gid=151388549)
+📄 [來來來來排班](https://docs.google.com/spreadsheets/d/1VIvETKN4FDOEeWz29UbaK2c3t6a9SqS4lZoB8LcKJbE/edit?gid=151388549#gid=151388549)
     """
     print("✅ 傳送內容如下：\n" + msg)
     requests.post(WEBHOOK_URL, json={"content": msg})
