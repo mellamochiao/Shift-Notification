@@ -1,12 +1,11 @@
-# Shift Notification 🐶
+# Shift Notification Discord Bot🐶
 
 A scheduled Discord bot to automatically remind volunteer shifts from Google Sheets.
 
 ##  Project Description
 
 This project automates the process of sending daily shift reminders to a Discord channel. It is designed for volunteer teams that maintain a shared schedule on Google Sheets. The script reads tomorrow’s shift names from the spreadsheet, converts them into Discord mentions using role filtering, and sends a formatted message to a designated channel using Discord Webhook.
-
-The project is deployed on [Render.com](https://render.com), where a cron job is scheduled to run once per day.
+The project is now deployed on [Render.com](https://render.com), where a cron job is scheduled to run once per day.
 
 ##  Features
 
@@ -42,7 +41,7 @@ BOT_TOKEN="..."
 TARGET_ROLE_NAME="..."
 SPREADSHEET_ID="..."
 SHEET_NAME="..."
-GOOGLE_SERVICE_ACCOUNT_JSON="..."  # Entire content of service_account.json (as a one-line string)
+GOOGLE_SERVICE_ACCOUNT_JSON="..."  # Entire content of service_account.json 
 ```
 ⚠️ GOOGLE_SERVICE_ACCOUNT_JSON is stored as a string in the .env file, and dynamically written to a temp file at runtime.
 
